@@ -16,20 +16,25 @@ const AppProvider = ({ children }) => {
     setIndex((oldIndex) => {
       const index = oldIndex + 1;
       if (index > questions.length - 1) {
+        openModal();
         return 0;
       }
       return index;
     });
   };
   const checkAnswer = (value) => {
-    console.log(value);
-    setCorrect((oldCorrect) => {
-      if (value) {
-        return oldCorrect + 1;
-      }
-      return oldCorrect;
-    });
+    if (value) {
+      setCorrect((oldState) => oldState + 1);
+    }
     handleNextQuestion();
+  };
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setCorrect(0);
+    setWaiting(true);
   };
   const fetchQuestions = async (url) => {
     setLoading(true);
@@ -62,6 +67,8 @@ const AppProvider = ({ children }) => {
         correct,
         handleNextQuestion,
         checkAnswer,
+        closeModal,
+        isModalOpen,
       }}
     >
       {children}
