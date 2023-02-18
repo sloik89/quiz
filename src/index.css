@@ -185,3 +185,58 @@ body {
 .modal-container.isOpen {
   transform: translateX(0);
 }
+main {
+  height: 100vh;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.quiz {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.setup-form {
+  width: 80%;
+  max-width: 800px;
+  padding: 1rem;
+}
+.setup-form h2 {
+  font-size: 2.5rem;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+}
+.setup-form .form-control {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+.submit {
+  width: 100%;
+  margin-top: 1rem;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: orange;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0.4rem 0;
+}
+.form-control label {
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.form-control input {
+  padding: 0.5rem 0.3rem;
+}
+.form-control select {
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 0.5rem 0.3rem;
+}
